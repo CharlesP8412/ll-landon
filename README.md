@@ -8,7 +8,7 @@ Serverless deployment using AWS Amplify, and fetches data using AWS DynamoDB, an
 
 # Features
 
-- Dynamic menus, images, and services & accessibilites served from AWS DynamoDB
+- Dynamic menus, images, and services & accessibilites served from AWS DynamoDB and AWS API Gateway
 - Scripts to build DynamoDB schema, and seed DB using local JSON files
 
 # Screenshots
@@ -23,6 +23,7 @@ Serverless deployment using AWS Amplify, and fetches data using AWS DynamoDB, an
 
 ## Future Additions
 
-- [] API Authorization to secure \* Cors
-- [] DRY Code (Fetches)
-- [] GraphQL API
+- [ ] List Unique Keys
+- [ ] API Authorization to secure \* Cors
+- [ ] DRY Code (Fetches)
+- [ ] GraphQL API
