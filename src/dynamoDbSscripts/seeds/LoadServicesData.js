@@ -2,28 +2,28 @@ var AWS = require("aws-sdk");
 var fs = require('fs');
 
 AWS.config.update({
-  region: "us-east-1"
+  region: "us-east-2"
 });
 
-console.log("Writing entries to Accessibilities table.");
+console.log("Writing entries to Services table.");
 
 var dynamodb = new AWS.DynamoDB.DocumentClient();
-var accessibilitiesData = 
-  JSON.parse(fs.readFileSync('../components/data/accessibilities.json', 'utf8'));
+var servicesData =
+  JSON.parse(fs.readFileSync('../../components/data/services.json', 'utf8'));
 
-accessibilitiesData.forEach(function(accessibililty) {
+servicesData.forEach(function (service) {
   var params = {
-    TableName: "Accessibilities",
+    TableName: "services",
     Item: {
-      "name": accessibililty.name
+      "name": service.name
     }
   };
 
-  dynamodb.put(params, function(err, data) {
+  dynamodb.put(params, function (err, data) {
     if (err)
-      console.error("Unable to load data into table for accessibility",
-                    accessibililty.name, ". Error: ", JSON.stringify(err, null, 2))
+      console.error("Unable to load data into table for services",
+        service.name, ". Error: ", JSON.stringify(err, null, 2))
     else
-      console.log("Added", accessibililty.name, "to table.")
+      console.log("Added", service.name, "to table.")
   })
 });
