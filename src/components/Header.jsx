@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import menuLinks from './data/menuLinks.json';
+// import menuLinks from './data/menuLinks.json';
 
 const Header = () => {
-  // const [menuLinks, setMenuLinks] = useState([]);
+  const [menuLinks, setMenuLinks] = useState([]);
 
-  // const loadMenuLinksData = async () => {
-  //   const resp = await fetch(`https://rhz91hml28.execute-api.us-east-2.amazonaws.com/Production/menuLinks`);
-  //   let jsonData = await resp.json();
-  //   setMenuLinks(jsonData);
-  // };
-  // useEffect(() => {
-  //   loadMenuLinksData();
-  // }, []);
+  const loadMenuLinksData = async () => {
+    const resp = await fetch(`https://rhz91hml28.execute-api.us-east-2.amazonaws.com/Production/menuLinks`);
+    let jsonData = await resp.json();
+    setMenuLinks(jsonData);
+  };
+  useEffect(() => {
+    loadMenuLinksData();
+  }, []);
 
   return (
     <header id='intro'>
