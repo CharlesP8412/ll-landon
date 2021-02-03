@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import servicesData from '../data/services.json';
-// import accessibilityData from '../data/accessibilities.json';
 
 const Info = () => {
   const [servicesData, setServicesData] = useState([]);

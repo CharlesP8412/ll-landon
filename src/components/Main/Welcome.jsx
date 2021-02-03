@@ -1,7 +1,18 @@
-import React from 'react';
-import imagesData from '../data/hotelImages.json';
+import React, { useState, useEffect } from 'react';
 
 const Welcome = () => {
+  const [imagesData, setImagesData] = useState([]);
+
+  const loadImagesData = async () => {
+    const resp = await fetch(`https://rhz91hml28.execute-api.us-east-2.amazonaws.com/Production/galleryImages`);
+    let jsonData = await resp.json();
+    console.log('JSON DATA', jsonData);
+    setImagesData(jsonData);
+  };
+  useEffect(() => {
+    loadImagesData();
+  }, []);
+
   return (
     <div className='scene' id='welcome'>
       <article className='content'>
