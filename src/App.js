@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Main from './components/Main/Index'
 
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 class App extends React.Component {

@@ -43,7 +43,7 @@ const Info = () => {
           </p>
           <ul>
             {servicesData.map((service) => (
-              <li>{service}</li>
+              <li>{service.name}</li>
             ))}
           </ul>
         </section>
@@ -55,7 +55,7 @@ const Info = () => {
           </p>
           <ul>
             {accessibilityData.map((accessibility) => (
-              <li>{accessibility}</li>
+              <li>{accessibility.name}</li>
             ))}
           </ul>
         </section>
