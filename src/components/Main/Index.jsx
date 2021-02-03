@@ -1,6 +1,6 @@
 import React from 'react';
-import Welcome from './Welcome';
 import Info from './Info';
+import Welcome from './Welcome';
 
 const Main = () => {
   return (
