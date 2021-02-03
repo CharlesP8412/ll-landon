@@ -1,13 +1,13 @@
 import React from 'react';
-import images from '../data/hotelImages.json';
+import imagesData from '../data/hotelImages.json';
 
 const Welcome = () => {
   return (
     <div className='scene' id='welcome'>
       <article className='content'>
         <div className='gallery'>
-          {images.map((image) => {
-            return <img src={image.src} alt={image.alt} />;
+          {imagesData.map((image) => {
+            return <img className={image.className} src={image.src} alt={image.alt} />;
           })}
         </div>
         <h1>Welcome to the Landon&nbsp;Hotel</h1>
