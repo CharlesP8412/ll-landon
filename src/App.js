@@ -15,8 +15,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React on react
         </a>
+        <p> Lynda learning is also good</p>
       </header>
     </div>
   );
