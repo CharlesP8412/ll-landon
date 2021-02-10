@@ -5,12 +5,12 @@ const Info = (props) => {
   const [accessibilityData, setAccessibilityData] = useState([]);
 
   const loadServiceData = async () => {
-    const svcResp = await fetch(`${props.aws}/Production/services`);
+    const svcResp = await fetch(`${props.api}/Production/services`);
     let svcJsonData = await svcResp.json();
     setServicesData(svcJsonData);
   };
   const loadAccessData = async () => {
-    const accessResp = await fetch(`${props.aws}/Production/accessibilites`);
+    const accessResp = await fetch(`${props.api}/Production/accessibilites`);
     let accessJsonData = await accessResp.json();
     setAccessibilityData(accessJsonData);
   };

@@ -5,8 +5,8 @@ import Welcome from './Welcome';
 const Main = (props) => {
   return (
     <main id='wrapper'>
-      <Welcome aws={props.aws} />
-      <Info aws={props.aws} />
+      <Welcome aws={props.api} />
+      <Info aws={props.api} />
     </main>
   );
 };

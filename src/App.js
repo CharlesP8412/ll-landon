@@ -5,15 +5,14 @@ import Header from './components/Header'
 import Main from './components/Main/Index'
 
 import './App.css';
-const aws = "https://rhz91hml28.execute-api.us-east-2.amazonaws.com"
-console.log(process.env.AWS)
+const apiGateway = process.env.REACT_APP_AWS_API
 
 class App extends React.Component {
   render() {
     return (
       <div className='app'>
-        <Header aws={aws} />
-        <Main aws={aws} />
+        <Header api={apiGateway} />
+        <Main api={apiGateway} />
         <Footer />
       </div>
     )

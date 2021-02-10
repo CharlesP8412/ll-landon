@@ -4,7 +4,7 @@ const Header = (props) => {
   const [menuLinks, setMenuLinks] = useState([]);
 
   const loadMenuLinksData = async () => {
-    const resp = await fetch(`${props.aws}/Production/menuLinks`);
+    const resp = await fetch(`${props.api}/Production/menuLinks`);
     let jsonData = await resp.json();
     setMenuLinks(jsonData);
   };

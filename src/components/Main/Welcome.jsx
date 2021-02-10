@@ -4,7 +4,7 @@ const Welcome = (props) => {
   const [imagesData, setImagesData] = useState([]);
 
   const loadImagesData = async () => {
-    const resp = await fetch(`${props.aws}/Production/galleryImages`);
+    const resp = await fetch(`${props.api}/Production/galleryImages`);
     let jsonData = await resp.json();
     setImagesData(jsonData);
   };
