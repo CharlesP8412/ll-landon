@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-const Info = () => {
+const Info = (props) => {
   const [servicesData, setServicesData] = useState([]);
   const [accessibilityData, setAccessibilityData] = useState([]);
 
   const loadServiceData = async () => {
-    const svcResp = await fetch(`https://rhz91hml28.execute-api.us-east-2.amazonaws.com/Production/services`);
+    const svcResp = await fetch(`${props.aws}/Production/services`);
     let svcJsonData = await svcResp.json();
     setServicesData(svcJsonData);
   };
   const loadAccessData = async () => {
-    const accessResp = await fetch(`https://rhz91hml28.execute-api.us-east-2.amazonaws.com/Production/accessibilites`);
+    const accessResp = await fetch(`${props.aws}/Production/accessibilites`);
     let accessJsonData = await accessResp.json();
     setAccessibilityData(accessJsonData);
   };
@@ -58,8 +58,8 @@ const Info = () => {
             one-of-a-kind.
           </p>
           <ul>
-            {servicesData.map((service) => (
-              <li>{service.name}</li>
+            {servicesData.map((service, index) => (
+              <li key={index}>{service.name}</li>
             ))}
           </ul>
         </section>
@@ -70,8 +70,8 @@ const Info = () => {
             facilities for those with special needs:
           </p>
           <ul>
-            {accessibilityData.map((accessibility) => (
-              <li>{accessibility.name}</li>
+            {accessibilityData.map((accessibility, index) => (
+              <li key={index}>{accessibility.name}</li>
             ))}
           </ul>
         </section>

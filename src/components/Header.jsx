@@ -1,16 +1,26 @@
 import React, { useState, useEffect } from 'react';
 
-const Header = () => {
+const Header = (props) => {
   const [menuLinks, setMenuLinks] = useState([]);
 
   const loadMenuLinksData = async () => {
-    const resp = await fetch(`https://rhz91hml28.execute-api.us-east-2.amazonaws.com/Production/menuLinks`);
+    const resp = await fetch(`${props.aws}/Production/menuLinks`);
     let jsonData = await resp.json();
     setMenuLinks(jsonData);
   };
   useEffect(() => {
     loadMenuLinksData();
   }, []);
+
+  const parsedList = menuLinks.map((link, index) => {
+    return (
+      <li key={index}>
+        <a className={`icon ${link.class}`} href={link.href}>
+          <span>{link.text}</span>
+        </a>
+      </li>
+    );
+  });
 
   return (
     <header id='intro'>
@@ -33,17 +43,7 @@ const Header = () => {
               Landon <span>Hotel</span>
             </a>
           </div>
-          <ul>
-            {menuLinks.map((link) => {
-              return (
-                <li>
-                  <a className={`icon ${link.class}`} href={link.href}>
-                    <span>{link.text}</span>
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
+          <ul>{parsedList}</ul>
         </div>
       </nav>
     </header>

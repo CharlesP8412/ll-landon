@@ -4,15 +4,16 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Main from './components/Main/Index'
 
-// import logo from './logo.svg';
 import './App.css';
+const aws = "https://rhz91hml28.execute-api.us-east-2.amazonaws.com"
+console.log(process.env.AWS)
 
 class App extends React.Component {
   render() {
     return (
       <div className='app'>
-        <Header />
-        <Main />
+        <Header aws={aws} />
+        <Main aws={aws} />
         <Footer />
       </div>
     )

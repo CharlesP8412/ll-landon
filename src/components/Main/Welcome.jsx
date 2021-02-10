@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-const Welcome = () => {
+const Welcome = (props) => {
   const [imagesData, setImagesData] = useState([]);
 
   const loadImagesData = async () => {
-    const resp = await fetch(`https://rhz91hml28.execute-api.us-east-2.amazonaws.com/Production/galleryImages`);
+    const resp = await fetch(`${props.aws}/Production/galleryImages`);
     let jsonData = await resp.json();
-    console.log('JSON DATA', jsonData);
     setImagesData(jsonData);
   };
   useEffect(() => {
@@ -17,8 +16,8 @@ const Welcome = () => {
     <div className='scene' id='welcome'>
       <article className='content'>
         <div className='gallery'>
-          {imagesData.map((image) => {
-            return <img className={image.className} src={image.src} alt={image.alt} />;
+          {imagesData.map((image, index) => {
+            return <img key={index} className={image.className} src={image.src} alt={image.alt} />;
           })}
         </div>
         <h1>Welcome to the Landon&nbsp;Hotel</h1>

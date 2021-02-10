@@ -2,7 +2,7 @@
 
 Converts a hotel website from legacy HTML to React.
 <br/>
-Serverless deployment using AWS Amplify, and fetches data using AWS DynamoDB, and AWS API Gateway.
+Serverless deployment using AWS Amplify, and fetches data using AWS DynamoDB, Lambda, and AWS API Gateway.
 
 #### Initial HTML and CSS provided by LinkedIn Learning
 
@@ -24,6 +24,7 @@ Serverless deployment using AWS Amplify, and fetches data using AWS DynamoDB, an
 ## Future Additions
 
 - [ ] List Unique Keys
+- [ ] Move maps out of HTML
 - [ ] API Authorization to secure \* Cors
 - [ ] DRY Code (Fetches)
 - [ ] GraphQL API
